@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.dc43138f.css","mappings":"oGAEA,KACI,8BACJ","sources":["font.css"],"sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');\r\n\r\nbody {\r\n    font-family: 'Poppins', sans-serif;\r\n}"],"names":[],"sourceRoot":""}
