@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/personal-finance-manager/static/css/main.dc43138f.css",
-    "main.js": "/personal-finance-manager/static/js/main.94c0dc3c.js",
+    "main.js": "/personal-finance-manager/static/js/main.a2777d42.js",
     "static/media/Finance leaders.svg": "/personal-finance-manager/static/media/Finance leaders.979d0bb1da802c85080efe66cfcb0ffc.svg",
     "static/media/Debt Manage.svg": "/personal-finance-manager/static/media/Debt Manage.03efd80a3648385d2b84f21aa225d72c.svg",
     "static/media/Manage money.svg": "/personal-finance-manager/static/media/Manage money.c458a103c767cce580b4d6549cd887bc.svg",
@@ -48,10 +48,10 @@
     "static/media/Add_round.svg": "/personal-finance-manager/static/media/Add_round.f267785511b3dbbfc50f9b0549d32e24.svg",
     "static/media/Expand_down.svg": "/personal-finance-manager/static/media/Expand_down.cb66290277c6718eb9a68efc86c978d0.svg",
     "main.dc43138f.css.map": "/personal-finance-manager/static/css/main.dc43138f.css.map",
-    "main.94c0dc3c.js.map": "/personal-finance-manager/static/js/main.94c0dc3c.js.map"
+    "main.a2777d42.js.map": "/personal-finance-manager/static/js/main.a2777d42.js.map"
   },
   "entrypoints": [
     "static/css/main.dc43138f.css",
-    "static/js/main.94c0dc3c.js"
+    "static/js/main.a2777d42.js"
   ]
 }
