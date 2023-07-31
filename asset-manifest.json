@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/paymint-web-app/static/css/main.dc43138f.css",
-    "main.js": "/paymint-web-app/static/js/main.f460161f.js",
+    "main.js": "/paymint-web-app/static/js/main.fdaee4df.js",
     "static/media/Debt Manage.svg": "/paymint-web-app/static/media/Debt Manage.03efd80a3648385d2b84f21aa225d72c.svg",
     "static/media/Manage money.svg": "/paymint-web-app/static/media/Manage money.c458a103c767cce580b4d6549cd887bc.svg",
     "static/media/Budgeting.svg": "/paymint-web-app/static/media/Budgeting.0ee89886a030909e04aee3dddcafa0b6.svg",
@@ -43,10 +43,10 @@
     "static/media/Search.svg": "/paymint-web-app/static/media/Search.000f0af2b454999c98b015a8b3c0ec3a.svg",
     "static/media/Expand_down.svg": "/paymint-web-app/static/media/Expand_down.cb66290277c6718eb9a68efc86c978d0.svg",
     "main.dc43138f.css.map": "/paymint-web-app/static/css/main.dc43138f.css.map",
-    "main.f460161f.js.map": "/paymint-web-app/static/js/main.f460161f.js.map"
+    "main.fdaee4df.js.map": "/paymint-web-app/static/js/main.fdaee4df.js.map"
   },
   "entrypoints": [
     "static/css/main.dc43138f.css",
-    "static/js/main.f460161f.js"
+    "static/js/main.fdaee4df.js"
   ]
 }
