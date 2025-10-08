@@ -1,8 +1,6 @@
 package com.example.springapp.user;
 
-import java.util.List;
-
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 import com.example.springapp.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;

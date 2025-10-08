@@ -3,8 +3,6 @@ package com.example.springapp.controller;
 
 
 import com.example.springapp.BaseResponceDto;
-import com.example.springapp.account.Account;
-import com.example.springapp.category.CategoryService;
 import com.example.springapp.config.auth.JWTGenerator;
 import com.example.springapp.goals.Goal;
 import com.example.springapp.goals.GoalsService;

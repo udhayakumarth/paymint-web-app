@@ -63,12 +63,21 @@ public class DashboardService {
     }
 
     public Map<String, Object> convertThisMonthTotalIncomeAndExpenses(List<Object[]> queryResult) {
-        Object[] row = queryResult.get(0);
         Map<String, Object> result = new LinkedHashMap<>();
+
+        if (queryResult == null || queryResult.isEmpty()) {
+            result.put("total_expenses", 0);
+            result.put("total_income", 0);
+            return result;
+        }
+
+        Object[] row = queryResult.get(0);
+
         result.put("total_expenses", row[0]);
         result.put("total_income", row[1]);
         return result;
     }
+
 
     public List<Map<String, Object>> getThisMonthExpenses(String userName) {
         UserEntity user = userRepository.findByEmail(userName).orElseThrow();

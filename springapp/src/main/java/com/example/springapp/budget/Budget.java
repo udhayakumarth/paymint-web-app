@@ -4,7 +4,7 @@ package com.example.springapp.budget;
 import com.example.springapp.category.Category;
 import com.example.springapp.user.UserEntity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity

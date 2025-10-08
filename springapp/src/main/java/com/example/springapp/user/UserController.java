@@ -1,17 +1,12 @@
 package com.example.springapp.user;
 
 import com.example.springapp.BaseResponceDto;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.example.springapp.config.auth.LoginDto;
 import com.example.springapp.config.auth.JWTGenerator;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.mail.MessagingException;
-import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -25,7 +20,6 @@ public class UserController {
     private JWTGenerator jwtGenerator;
 	private OTPStorage otpStorage;
 
-    @Autowired
     public UserController(UserRepository userRepository, JWTGenerator jwtGenerator, UserService userService,OTPStorage otpStorage) {
     	this.userService = userService;
         this.userRepository = userRepository;

@@ -9,21 +9,18 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import javax.mail.MessagingException;
-import javax.mail.internet.MimeMessage;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -83,14 +80,15 @@ public class UserServiceImpl implements UserService {
 		String fromAddress = "paymint.ltd@outlook.com";
 		String senderName = "Paymint Team";
 		String subject = "Paymint account security code";
-		String content = "<div>\n" +
-				"    <span style=\"color:#808080;padding: 2px;font-family: sans-serif;\">Paymint Account</span><br>\n" +
-				"    <span style=\"color:#5C6AC4;padding: 2px;font-size:32px;font-family: sans-serif;\"><b>Security code</b></span><br><br>\n" +
-				"    <span style=\"font-family: sans-serif;\">Please use the following security code for the Paymint account.</span><br><br><br>\n" +
-				"    <span style=\"font-family: sans-serif;\">Security code: <b>[[CODE]]</b></span><br><br><br>\n" +
-				"    <span style=\"font-family: sans-serif;\">Thanks,</span><br>\n" +
-				"    <span style=\"font-family: sans-serif;\">The Paymint Team</span>\n" +
-				"</div>";
+		String content = """
+                <div>
+                    <span style="color:#808080;padding: 2px;font-family: sans-serif;">Paymint Account</span><br>
+                    <span style="color:#5C6AC4;padding: 2px;font-size:32px;font-family: sans-serif;"><b>Security code</b></span><br><br>
+                    <span style="font-family: sans-serif;">Please use the following security code for the Paymint account.</span><br><br><br>
+                    <span style="font-family: sans-serif;">Security code: <b>[[CODE]]</b></span><br><br><br>
+                    <span style="font-family: sans-serif;">Thanks,</span><br>
+                    <span style="font-family: sans-serif;">The Paymint Team</span>
+                </div>""";
 
 		MimeMessage message = mailSender.createMimeMessage();
 		MimeMessageHelper helper = new MimeMessageHelper(message);

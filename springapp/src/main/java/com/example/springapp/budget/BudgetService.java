@@ -1,6 +1,5 @@
 package com.example.springapp.budget;
 
-import com.example.springapp.controller.BudgetController;
 import com.example.springapp.user.UserEntity;
 
 import java.util.List;
