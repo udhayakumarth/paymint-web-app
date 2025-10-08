@@ -1,6 +1,6 @@
 package com.example.springapp;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -9,16 +9,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.io.File;
 
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 
-@RunWith(SpringJUnit4ClassRunner.class) 
 @SpringBootTest(classes = SpringappApplication.class)
 @AutoConfigureMockMvc
 class SpringappApplicationTests {
@@ -103,7 +100,7 @@ class SpringappApplicationTests {
      public void test_case1() {
      String directoryPath = "src/main/java/com/example/springapp/controller";
       File directory = new File(directoryPath);
-      assertTrue(directory.exists() && directory.isDirectory());;
+      assertTrue(directory.exists() && directory.isDirectory());
       }
 
 
@@ -111,7 +108,7 @@ class SpringappApplicationTests {
      public void test_case2() {
      String filePath = "src/main/java/com/example/springapp/controller/AccountController.java";
       File file = new File(filePath);
-      assertTrue(file.exists() && file.isFile());;
+      assertTrue(file.exists() && file.isFile());
       }
     
 }

@@ -10,10 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 @Service
@@ -50,7 +47,7 @@ public class CategoryService {
     }
     public String deleteCategories(int category_TD){
         try{
-            Category entity=categoryRepository.getOne(category_TD);
+            Category entity=categoryRepository.getReferenceById(category_TD);
             categoryRepository.delete(entity);
         }catch (Exception e){
             return e.getMessage();

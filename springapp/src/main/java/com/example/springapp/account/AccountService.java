@@ -80,7 +80,7 @@ public class AccountService {
 
     public boolean hasAccount(String accountId) {
         try{
-            Account entity= accountRepository.getOne(Integer.valueOf(accountId));
+            Account entity= accountRepository.getReferenceById(Integer.valueOf(accountId));
             return entity.getAccountId() == Integer.parseInt(accountId);
         }catch (Exception ignored){
             return false;
@@ -90,7 +90,7 @@ public class AccountService {
     public boolean hasPermission(String userName, String accountId) {
         try{
             UserEntity user = userRepository.findByEmail(userName).orElseThrow();
-            Account entity= accountRepository.getOne(Integer.valueOf(accountId));
+            Account entity= accountRepository.getReferenceById(Integer.valueOf(accountId));
             return Objects.equals(entity.getUser().getUserId(), user.getUserId());
         }catch (Exception ignored){
             return false;

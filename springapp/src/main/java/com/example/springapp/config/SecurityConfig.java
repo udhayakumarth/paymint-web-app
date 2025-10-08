@@ -1,5 +1,7 @@
 package com.example.springapp.config;
 
+import static org.springframework.security.config.Customizer.withDefaults;
+
 import com.example.springapp.config.auth.CustomUserDetailsService;
 import com.example.springapp.config.auth.JWTAuthEntryPoint;
 import com.example.springapp.config.auth.JWTAuthFilter;
@@ -25,7 +27,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 
 @Configuration
@@ -35,7 +36,6 @@ public class SecurityConfig {
     private CustomUserDetailsService userDetailsService;
     @Autowired
     private LogoutHandler logoutHandler; 
-    @Autowired
     public SecurityConfig(CustomUserDetailsService userDetailsService, JWTAuthEntryPoint authEntryPoint) {
         this.userDetailsService = userDetailsService;
         this.authEntryPoint = authEntryPoint;
@@ -43,24 +43,21 @@ public class SecurityConfig {
     
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.cors().and()
-                .csrf().disable()
-                .exceptionHandling()
-                .authenticationEntryPoint(authEntryPoint)
-                .and()
-                .sessionManagement()
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .authorizeRequests()
-                .antMatchers("/api/auth/**","/accounts","/budget","/goals","/api/send-verification-email").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .httpBasic();
+        http.cors(withDefaults())
+                .csrf(csrf -> csrf.disable())
+                .exceptionHandling(handling -> handling
+                        .authenticationEntryPoint(authEntryPoint))
+                .sessionManagement(management -> management
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers("/api/auth/**", "/accounts", "/budget", "/goals", "/api/send-verification-email").permitAll()
+                        .anyRequest().authenticated())
+                .httpBasic(withDefaults());
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-        	.logout()
-        	.logoutUrl("/api/logout")
-        	.addLogoutHandler(logoutHandler)
-        	.logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext());
+                .logout(logout -> logout
+                        .logoutUrl("/api/logout")
+                        .addLogoutHandler(logoutHandler)
+                        .logoutSuccessHandler((request, response, authentication) -> SecurityContextHolder.clearContext()));
         return http.build();
     }
 
@@ -82,7 +79,7 @@ public class SecurityConfig {
 
     @Bean
     public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurerAdapter() {
+        return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET", "POST","PUT", "DELETE");

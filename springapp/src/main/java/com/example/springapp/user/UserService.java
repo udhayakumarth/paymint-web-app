@@ -5,7 +5,7 @@ import com.example.springapp.config.auth.LoginDto;
 
 import org.springframework.http.ResponseEntity;
 
-import javax.mail.MessagingException;
+import jakarta.mail.MessagingException;
 import java.io.UnsupportedEncodingException;
 
 public interface UserService {

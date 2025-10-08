@@ -2,15 +2,11 @@ package com.example.springapp.category;
 
 import com.example.springapp.BaseResponceDto;
 import com.example.springapp.config.auth.JWTGenerator;
-import com.example.springapp.user.UserEntity;
-import com.example.springapp.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class CategoryController {

@@ -4,8 +4,7 @@ package com.example.springapp.goals;
 import com.example.springapp.user.UserEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.*;
-import java.util.Date;
+import jakarta.persistence.*;
 
 @Entity
 public class Goal {

@@ -8,8 +8,8 @@ import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletOutputStream;
+import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -53,14 +53,14 @@ public class TransactionExcelExporter {
     private void createCell(Row row, int columnCount, Object value, CellStyle style) {
         sheet.autoSizeColumn(columnCount);
         Cell cell = row.createCell(columnCount);
-        if (value instanceof Integer) {
-            cell.setCellValue((Integer) value);
-        } else if (value instanceof Boolean) {
-            cell.setCellValue((Boolean) value);
-        }else if (value instanceof Long){
-            cell.setCellValue((Long) value);
-        }else if (value instanceof Double){
-            cell.setCellValue((Double) value);
+        if (value instanceof Integer integer) {
+            cell.setCellValue(integer);
+        } else if (value instanceof Boolean boolean1) {
+            cell.setCellValue(boolean1);
+        }else if (value instanceof Long long1){
+            cell.setCellValue(long1);
+        }else if (value instanceof Double double1){
+            cell.setCellValue(double1);
         }else  {
             cell.setCellValue((String) value);
         }
